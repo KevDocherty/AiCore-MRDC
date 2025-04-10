@@ -175,3 +175,9 @@ cython_debug/
 
 # AWS database credentials
 db_creds.yaml
+
+# Jupyter notebooks
+*.ipynb
+
+# VS Code settings
+.vscode/
