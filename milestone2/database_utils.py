@@ -19,7 +19,7 @@ class DatabaseConnector():
         '''
         read the credentials from read_db_creds and initialise and return an sqlalchemy database engine
         '''
-        DATABASE_TYPE = credentials["RDS_DATABASE"]
+        #DATABASE_TYPE = credentials["RDS_DATABASE"]
         #DBAPI = 'psycopg2'
         HOST = credentials["RDS_HOST"]
         USER = credentials["RDS_USER"]
@@ -44,18 +44,24 @@ class DatabaseConnector():
         '''
         uploads a pandas dataframe to the database
         '''
-        # Define your database connection parameters
-        DATABASE_TYPE = 'postgresql'
-        DBAPI = 'psycopg2'
-        HOST = 'localhost'
-        USER = 'postgres'
-        PASSWORD = 'ubR3HqJqS&j'
-        DATABASE = 'sales_data'
-        PORT = 5433
-        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}")
 
+        # Read the credentials from the YAML file
+        # and create a database engine
+        with open('local_db_creds.yaml', 'r') as f:
+            credentials = yaml.safe_load(f)
+
+        DATABASE_TYPE = credentials["DATABASE_TYPE"]
+        DBAPI = credentials["DBAPI"]
+        HOST = credentials["HOST"]
+        USER = credentials["USER"]
+        PASSWORD = credentials["PASSWORD"]
+        DATABASE = credentials["DATABASE"]
+        PORT = credentials["PORT"]
+
+        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}")
 
         # Upload the DataFrame to the database
         df.to_sql(table_name, engine, if_exists='replace', index=False)
         print(f"DataFrame uploaded to {table_name} table in the database.")
         # Close the database connection
+        engine.dispose()

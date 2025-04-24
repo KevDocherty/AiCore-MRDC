@@ -175,9 +175,31 @@ cython_debug/
 
 # AWS database credentials
 db_creds.yaml
+local_db_creds.yaml
+
+# yaml files
+*.yaml
+*.yml
+# CSV files
+*.csv
+# Excel files
+*.xlsx
+# JSON files
+*.json
+# XML files
+*.xml
+# HTML files
+*.html
 
 # Jupyter notebooks
 *.ipynb
 
 # VS Code settings
 .vscode/
+
+# MACOS
+#  macOS specific files
+.DS_Store
+
+# 'data' folder
+data/
