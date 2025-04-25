@@ -30,7 +30,7 @@ class DataExtractor():
 
     def retrieve_pdf_data(self, pdf_path):
         """
-        Extracts all tables from all pages of a PDF and returns them as a single DataFrame.
+        extracts all tables from all pages of a PDF and returns them as a single DataFrame.
         """
         # Extract all tables as a list of DataFrames
         tables = tabula.read_pdf(pdf_path, pages='all', multiple_tables=True)
@@ -80,7 +80,7 @@ class DataExtractor():
 
     def extract_json_from_url(self, url):
         """
-        Extracts data from an S3 bucket and returns it as a DataFrame.
+        Extracts data from a JSON file and returns it as a DataFrame.
         """
 
         # Get the JSON data from the URL

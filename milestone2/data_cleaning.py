@@ -72,7 +72,8 @@ class DataCleaning():
 
     def clean_card_data(self, card_data):
         """
-        Clean card data by removing duplicates and filling missing values.
+        clean card data by removing nulls and duplicates, filling missing values
+        and converting date columns to datetime
         """
 
         # Replace "NULL" string with actual NaN
@@ -98,7 +99,9 @@ class DataCleaning():
 
     def called_clean_store_data(self, store_data):
         """
-        Clean store data by removing duplicates and filling missing values.
+        clean store data by removing columns containing no useful information,
+        converting dates to datetime, removing non-numeric characters from staff-numbers,
+        and removing nulls
         """
 
         # drop 'lat' column because it contains no useful information
@@ -131,7 +134,7 @@ class DataCleaning():
 
     def convert_product_weights(self, product_data):
         """
-        Convert product weights to a standard format.
+        convert product weights to decimal numbers in kg
         """
 
         # Apply the function to the 'weight' column
@@ -141,7 +144,7 @@ class DataCleaning():
 
     def clean_products_data(self, product_data):
         """
-        Clean product data by removing duplicates and filling missing values.
+        clean product data by removing nulls and columns containing no useful information
         """
 
         # Replace "NULL" string with actual NaN
@@ -160,7 +163,7 @@ class DataCleaning():
 
     def clean_orders_data(self, orders_data):
         """
-        Clean orders data by removing duplicates and filling missing values.
+        Clean orders data by removing columns containing no useful information
         """
 
         # drop 'Unnamed' column because it contains no useful information
@@ -183,7 +186,8 @@ class DataCleaning():
 
     def clean_date_events(self, df):
         """
-        Clean date events data by removing duplicates and filling missing values.
+        Clean date events data by removing duplicates, converting time column to datetime,
+        and converting date columns to numeric format
         """
 
         # Replace "NULL" string with actual NaN
