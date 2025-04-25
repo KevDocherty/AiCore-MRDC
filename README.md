@@ -1,2 +1,55 @@
 # AiCore-MRDC
 AiCore Multi-National Retail Data Centralisation project
+
+## Table of Contents 
+
+## Project Description
+A multinational company sells various goods across the globe. Currently, their sales data is spread across many different data sources making it not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
+
+The first task is therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
+
+- retrieve the data from AWS RDS database tables, as well as files from an AWS S3 bucket, and save as Pandas Dataframes
+- clean the dataframes to remove null values and duplicates, remove columns containing no useful information, convert time data to datetime format, remove erroneous records, and remove whitespaces and non-numeric characters from numeric data
+- add the resulting cleaned tables to a centralised database
+
+You will then query the database to get up-to-date metrics for the business.
+
+## File structure of the project
+
+Python was used to write the project code, which is structured into files, classes, and methods, as follows:
+
+- database_utils.py
+    - class DatabaseConnector(): methods to connect-to, read-from, and upload-to AWS RDS and PostgreSQL databases
+        - read_db_creds(): reads a credentials yaml file and returns a dictionary of the credentials
+        - init_db_engine(): uses the credentials from read_db_creds and initialises and returns an sqlalchemy database engine
+        - list_db_tables(): using the database engine, returns a list of tables in the database
+        - upload_to_db(): uploads a pandas dataframe to a SQL database table
+        
+- data_extraction.py
+    - class DataExtractor(): methods to extract data from a variety of sources, and return as pandas dataframes
+        - read_rds_table(): reads a table from the database and returns it as a pandas dataframe
+        - read_csv_table(): reads a csv file and returns it as a pandas dataframe
+        - retrieve_pdf_data(): extracts all tables from all pages of a PDF and returns them as a pandas dataframe
+        - list_number_of_stores(): returns the number of unique stores in a table
+        - retrieve_stores_data(): reads the stores data from a CSV file and returns it as a pandas dataframe
+        - extract_from_s3(): extracts data from an S3 bucket and returns it as a pandas dataframe
+        - extract_json_from_url(): extracts data from a JSON file and returns it as a pandas dataframe
+
+- data_cleaning.py
+    - class DataCleaning(): methods to clean pandas dataframes
+        - clean_user_data(): clean user data by removing null values, and converting date columns to datetime
+        - clean_card_data(): clean card data by removing nulls and duplicates, filling missing values and converting date columns to datetime
+        - called_clean_store_data(): clean store data by removing columns containing no useful information, 
+        converting dates to datetime, removing non-numeric characters from staff-numbers, and removing nulls
+        - convert_product_weights(): convert product weights to decimal numbers in kg
+        - clean_products_data(): clean product data by removing nulls and columns containing no useful information
+        - clean_orders_data(): clean orders data by removing columns containing no useful information
+        - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
+        and converting date columns to numeric format
+ 
+
+## Installation instructions
+
+## Usage instructions
+
+## License information
