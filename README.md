@@ -69,7 +69,7 @@ Folder 'milestone2' contains the Python code for the project, which is structure
         - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
         and converting date columns to numeric format
 
-
+The 'milestone3' folder contains the various SQL scripts used to tidy up and connect the 5 dimension tables to the central orders_table, as well as the ERD files.
 
 Having added the required tables to the 'sales_data' database, 
  
