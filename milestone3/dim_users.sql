@@ -1,5 +1,5 @@
 -- display the dim_users table...
-SELECT * FROM dim_users;
+SELECT * FROM orders_table;
 
 -- show column datatypes of dim_users table...
 SELECT 
@@ -46,7 +46,7 @@ ALTER COLUMN user_uuid TYPE UUID USING user_uuid::UUID;
 ALTER TABLE dim_users
 ALTER COLUMN join_date TYPE DATE USING join_date::DATE;
 
--- show updated column datatypes of dim_users table...
+-- show column datatypes of dim_users table...
 SELECT 
     column_name, 
     data_type
@@ -54,10 +54,3 @@ FROM
     information_schema.columns
 WHERE 
     table_name = 'dim_users';
-
--- set user_uuid as PK...
-ALTER TABLE dim_users
-ADD PRIMARY KEY (user_uuid);
-
--- display entire table...
-SELECT * FROM dim_users;

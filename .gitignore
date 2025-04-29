@@ -203,3 +203,8 @@ local_db_creds.yaml
 
 # 'data' folder
 data/
+
+# SQL session files
+*.sqlite
+*.sqlite3
+*.session.sql

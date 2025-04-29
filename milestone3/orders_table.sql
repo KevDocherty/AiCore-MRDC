@@ -51,38 +51,3 @@ FROM
 WHERE 
     table_name = 'orders_table';
 
--- display entire table...
-SELECT * FROM orders_table;
-
-SELECT COUNT(*), COUNT(DISTINCT product_code)
-FROM orders_table;
-
--- connect orders_table to dim_products using the common product_code column...
-ALTER TABLE orders_table
-ADD CONSTRAINT fk_orders_product_code
-FOREIGN KEY (product_code)
-REFERENCES dim_products(product_code);
-
--- connect orders_table to dim_date_times using the common date_uuid column...
-ALTER TABLE orders_table
-ADD CONSTRAINT fk_orders_date_uuid
-FOREIGN KEY (date_uuid)
-REFERENCES dim_date_times(date_uuid);
-
--- connect orders_table to dim_users using the common user_uuid column...
-ALTER TABLE orders_table
-ADD CONSTRAINT fk_orders_user_uuid
-FOREIGN KEY (user_uuid)
-REFERENCES dim_users(user_uuid);
-
--- connect orders_table to dim_card_details using the common card_number column...
-ALTER TABLE orders_table
-ADD CONSTRAINT fk_orders_card_number
-FOREIGN KEY (card_number)
-REFERENCES dim_card_details(card_number);
-
--- connect orders_table to dim_store_details using the common store_code column...
-ALTER TABLE orders_table
-ADD CONSTRAINT fk_orders_store_code
-FOREIGN KEY (store_code)
-REFERENCES dim_store_details(store_code);
