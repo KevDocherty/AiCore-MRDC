@@ -4,13 +4,33 @@ AiCore Multi-National Retail Data Centralisation project
 ## Table of Contents 
 
 ## Project Description
-A multinational company sells various goods across the globe. Currently, their sales data is spread across many different data sources making it not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
 
-The first task is therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
+A multinational company sells various goods across the globe. 
 
+Currently, their sales data is spread across many different data sources making them not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
+
+The first task was therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
+
+- create a local PostgreSQL database called 'sales_data'
 - retrieve the data from AWS RDS database tables, as well as files from an AWS S3 bucket, and save as Pandas Dataframes
 - clean the dataframes to remove null values and duplicates, remove columns containing no useful information, convert time data to datetime format, remove erroneous records, and remove whitespaces and non-numeric characters from numeric data
-- add the resulting cleaned tables to a centralised database
+- add the resulting cleaned tables to the PostgreSQL database
+
+The resulting sales_data database is then comprised of 6 tables, with a central 'orders_table' and 5 dimension ('dim') tables providing further details about each of the orders, as follows:
+
+- dim_date_times: dates and times of orders
+- dim_users: user details
+- dim_card_details: credit card details
+- dim_products: product details
+- dim_store_details: details of the various stores selling the products
+
+Connection of the tables to create a database, required the following steps:
+
+- cleaning up the tables to harmonise the column datatypes
+- creation of primary keys in the 'dim' tables
+- connection of each column of the orders_table to its equivalent in the dim tables via creation of foreign keys in the orders_table.
+
+The result is a star structure, with the central orders_table connected to each of the dim tables.
 
 You will then query the database to get up-to-date metrics for the business.
 
@@ -46,6 +66,9 @@ Python was used to write the project code, which is structured into files, class
         - clean_orders_data(): clean orders data by removing columns containing no useful information
         - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
         and converting date columns to numeric format
+
+
+Having added the required tables to the 'sales_data' database, 
  
 
 ## Installation instructions
@@ -53,3 +76,5 @@ Python was used to write the project code, which is structured into files, class
 ## Usage instructions
 
 ## License information
+
+MIT Licence
