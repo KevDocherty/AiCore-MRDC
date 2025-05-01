@@ -209,5 +209,7 @@ data/
 *.sqlite3
 *.session.sql
 
+
 # anything with a filename that starts with an underscore
 _*
+_*.*
