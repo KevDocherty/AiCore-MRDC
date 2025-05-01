@@ -1,35 +1,36 @@
 # AiCore-MRDC
-AiCore Multi-National Retail Data Centralisation project
+AiCore Multi-National Retail Data Centralisation Project
 
 ## Table of Contents 
 
 ## Project Description
 
-A multinational company sells various goods across the globe. 
+A multinational company sells a diverse range of goods across the globe. However, its sales data are initially scattered across multiple sources, making them difficult to access and analyse effectively. To support a more data-driven approach, the organisation aims to consolidate this data into a single, centralised system.
 
-Their sales data are initially spread across many different data sources making them not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
+### Objective
 
-The first task is therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
+The first step is to retrieve and centralise the distributed sales data into a structured PostgreSQL database named sales_data. This process involves several key stages:
+#### 1.	Database Setup
+    •	Create a local PostgreSQL database called sales_data.
+#### 2.	Data Retrieval
+	•	Extract source data from AWS RDS and AWS S3 buckets.
+	•	Load the data into Python using Pandas, resulting in several dataframes.
+#### 3.	Data Cleaning
+	•	Remove null values and duplicate records.
+	•	Eliminate columns containing no useful information.
+	•	Convert time-related fields to datetime format.
+	•	Filter out erroneous records.
+	•	Strip whitespace and remove non-numeric characters from numeric columns.
+#### 4.	Data Integration
+	•	Insert the cleaned dataframes as tables into the sales_data database.
 
-- creation of a local PostgreSQL database called 'sales_data'
-- retrieval of source data from AWS RDS / AWS S3 buckets, and saving as Pandas Dataframes
-- cleaning of the dataframes to remove null values and duplicates, remove columns containing no useful information, convert time data to datetime format, remove erroneous records, and remove whitespaces and non-numeric characters from numeric data
-- adding the resulting cleaned tables to the sales_data database.
+### Database Structure
 
-The sales_data database will now comprise 6 tables, with a central 'orders_table' and 5 dimension ('dim') tables providing further details about each of the orders, as follows:
+The resulting database will consist of six tables:
+- A central **orders_table**
+- Five supporting **dimension tables (dim_)**, which provide additional context:
 
-- dim_date_times: dates and times of orders
-- dim_users: user details
-- dim_card_details: credit card details
-- dim_products: product details
-- dim_store_details: details of the various stores selling the products.
-
-Connection of the tables to create a relational database, via the following steps:
-
-- harmonisation of column datatypes across the various tables, to facilitate connection
-- creation of primary keys in the 'dim' tables
-- connection of each column of the orders_table to its equivalent in the dim tables via creation of foreign keys in the orders_table.
-
+ 
 The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dim tables:
 
 <img src="milestone3/sales_data_erd.png" alt="ERD Diagram" width="600"/>
