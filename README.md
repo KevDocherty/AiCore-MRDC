@@ -7,38 +7,42 @@ AiCore Multi-National Retail Data Centralisation project
 
 A multinational company sells various goods across the globe. 
 
-Currently, their sales data is spread across many different data sources making them not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
+Their sales data are initially spread across many different data sources making them not easily accessible or analysable. To become more data-driven, the organisation would like to make its sales data accessible from one centralised location.
 
-The first task was therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
+The first task is therefore to retrieve the distributed sales data and add as tables to a centralised database, involving the following stages:
 
 - creation of a local PostgreSQL database called 'sales_data'
-- retrieval of the data from AWS RDS / AWS S3 bucket, and saving as Pandas Dataframes
+- retrieval of source data from AWS RDS / AWS S3 buckets, and saving as Pandas Dataframes
 - cleaning of the dataframes to remove null values and duplicates, remove columns containing no useful information, convert time data to datetime format, remove erroneous records, and remove whitespaces and non-numeric characters from numeric data
-- adding the resulting cleaned tables to the PostgreSQL database
+- adding the resulting cleaned tables to the sales_data database.
 
-The resulting sales_data database was then comprised of 6 tables, with a central 'orders_table' and 5 dimension ('dim') tables providing further details about each of the orders, as follows:
+The sales_data database will now comprise 6 tables, with a central 'orders_table' and 5 dimension ('dim') tables providing further details about each of the orders, as follows:
 
 - dim_date_times: dates and times of orders
 - dim_users: user details
 - dim_card_details: credit card details
 - dim_products: product details
-- dim_store_details: details of the various stores selling the products
+- dim_store_details: details of the various stores selling the products.
 
-Connection of the tables to create a database, required the following steps:
+Connection of the tables to create a relational database, via the following steps:
 
-- cleaning up the tables to harmonise the column datatypes
+- harmonisation of column datatypes across the various tables, to facilitate connection
 - creation of primary keys in the 'dim' tables
 - connection of each column of the orders_table to its equivalent in the dim tables via creation of foreign keys in the orders_table.
 
-The result is a star structure, with the central orders_table connected to each of the dim tables:
+The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dim tables:
 
 <img src="milestone3/sales_data_erd.png" alt="ERD Diagram" width="600"/>
 
-You will then query the database to get up-to-date metrics for the business.
+The database is now able to be queried, to reveal business metrics.
 
 ## File structure of the project
 
-Folder 'milestone2' contains the Python code for the project, which is structured into files, classes, and methods, as follows:
+The project is comprised of 3 folders, as follows:
+
+### Milestone2
+
+Python code for the project, which is structured into files, classes, and methods, as follows:
 
 - database_utils.py
     - class DatabaseConnector(): methods to connect-to, read-from, and upload-to AWS RDS and PostgreSQL databases
@@ -69,9 +73,14 @@ Folder 'milestone2' contains the Python code for the project, which is structure
         - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
         and converting date columns to numeric format
 
-The 'milestone3' folder contains the various SQL scripts used to tidy up and connect the 5 dimension tables to the central orders_table, as well as the ERD files.
+### Milestone3
 
-Having added the required tables to the 'sales_data' database, 
+SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
+ERD files.
+
+### Milestone4
+
+Examples of SQL scripts to perform business analytics.
  
 
 ## Installation instructions
