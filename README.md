@@ -1,8 +1,6 @@
 # AiCore-MRDC
 AiCore Multi-National Retail Data Centralisation Project
 
-## Table of Contents 
-
 ## Project Description
 
 A multinational company sells a diverse range of goods across the globe. However, its sales data are initially scattered across multiple sources, making them difficult to access and analyse effectively. To support a more data-driven approach, the organisation aims to consolidate this data into a single, centralised system.
@@ -30,12 +28,30 @@ The resulting database will consist of six tables:
 - A central **orders_table**
 - Five supporting **dimension tables (dim_)**, which provide additional context:
 
+| Table Name         | Description                          |
+|--------------------|--------------------------------------|
+| `dim_date_times`   | Dates and times of orders            |
+| `dim_users`        | User/customer information            |
+| `dim_card_details` | Payment card information             |
+| `dim_products`     | Product details                      |
+| `dim_store_details`| Store information                    |
+
+### Establishing Relationships
+
+To create a fully relational database structure, the following steps are carried out:
+- Data Type Harmonisation
+- Ensure consistent column datatypes across all tables to enable seamless joins.
+- Primary Key Assignment
+- Define primary keys in each of the dim_ tables.
+- Foreign Key Mapping
+- Link the relevant columns in the orders_table to their corresponding entries in the dim_ tables using foreign keys.
  
+
 The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dim tables:
 
-<img src="milestone3/sales_data_erd.png" alt="ERD Diagram" width="600"/>
+<img src="figures/sales_data_erd.png" alt="ERD Diagram" width="600"/>
 
-The database is now able to be queried, to reveal business metrics.
+The database is now able to be queried to reveal business metrics.
 
 ## File structure of the project
 
@@ -82,11 +98,10 @@ ERD files.
 ### Milestone4
 
 Examples of SQL scripts to perform business analytics.
- 
-
-## Installation instructions
 
 ## Usage instructions
+
+Please refer to the Jupyter Notebook **example_of_use.ipynb**, in the **milestone2** folder, for examples of how to use the code.
 
 ## License information
 
