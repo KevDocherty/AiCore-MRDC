@@ -186,7 +186,8 @@ class DataCleaning():
 
     def clean_date_events(self, df):
         """
-        Clean date events data by removing duplicates, converting time column to datetime,
+        Clean date events data by removing duplicates,
+        converting time column to datetime,
         and converting date columns to numeric format
         """
 
