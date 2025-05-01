@@ -199,7 +199,12 @@ class DataCleaning():
         df['year'] = pd.to_numeric(df['year'], errors='coerce')
 
         # convert 'timestamp' to datetime
-        df['timestamp'] = pd.to_datetime(df['timestamp'], format='mixed', errors='coerce')
+        #print(df['timestamp'])
+        #import pandas as pd
+
+        df['timestamp'] = pd.to_datetime(df['timestamp'], format='%H:%M:%S', errors='coerce').dt.time
+        #df['timestamp'] = pd.to_datetime(df['timestamp'], format='%H:%M:%S', errors='coerce')
+        #df['timestamp'] = pd.to_datetime(df['timestamp'], format='mixed', errors='coerce')
         # Drop rows with any NaT values in 'timestamp'
         df = df[df['timestamp'].notna()]
         # Drop rows with any NaN values
