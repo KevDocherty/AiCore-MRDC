@@ -92,8 +92,8 @@ Python code for the project, which is structured into files, classes, and method
 
 ### Milestone3
 
-SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
-ERD files.
+- SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
+- ERD files.
 
 ### Milestone4
 
