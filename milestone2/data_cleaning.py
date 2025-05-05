@@ -3,6 +3,12 @@ import numpy as np
 import re
 
 def extract_weight_kg(value):
+    '''
+    Module function to take weight values in numeric string format,
+    strip off the units characters ('g', 'kg', 'ml', and 'oz'),
+    and return as a float representing decimal kg.
+    This function is available to the methods within the DataCleaning() class.
+    '''
     try:
         value = str(value).lower().strip()
 
@@ -53,6 +59,11 @@ def extract_weight_kg(value):
         return np.nan
 
 class DataCleaning():
+    '''
+    The DataCleaning() class is a stateless class as it has no __init__() method;
+    it simply serves as a container for several methods which are used to clean Pandas dataframes.
+    The class may be imported into other programs, and instantiated, in order to provide access to said methods.
+    '''
 
     def clean_user_data(self, user_data):
         """

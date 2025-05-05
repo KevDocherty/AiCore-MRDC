@@ -6,6 +6,14 @@ from sqlalchemy import create_engine
 from sqlalchemy import inspect
 
 class DatabaseConnector():
+    '''
+    The DatabaseConnector() class is a stateless class as it has no __init__() method;
+    it simply serves as a container for several methods which are used to:
+    - connect to AWS RDS databases and return a SQLAlchemy engine,
+    - return a list of the database tables, and
+    - upload Pandas Dataframes to the local PostgreSQL database.
+    The class may be imported into other programs, and instantiated, in order to provide access to said methods.
+    '''
 
     def read_db_creds(self):
         '''

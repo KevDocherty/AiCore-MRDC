@@ -3,6 +3,12 @@ import tabula
 import boto3
 import requests
 class DataExtractor():
+    '''
+    The DataExtractor() class is a stateless class as it has no __init__() method;
+    it simply serves as a container for several methods which are used to retrieve data from AWS
+    RDS or AWS S3 buckets, in CSV, PDF, or JSON format, and return in the form of Pandas DataFrames.
+    The class may be imported into other programs, and instantiated, in order to provide access to the methods.
+    '''
 
     def read_rds_table(self, table_name, database_connector):
         '''
