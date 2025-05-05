@@ -40,11 +40,11 @@ The resulting database will consist of six tables:
 
 To create a fully relational database structure, the following steps are carried out:
 - Data Type Harmonisation
-- Ensure consistent column datatypes across all tables to enable seamless joins.
+	- Ensure consistent column datatypes across all tables to enable seamless joins.
 - Primary Key Assignment
-- Define primary keys in each of the dim_ tables.
+	- Define primary keys in each of the dim_ tables.
 - Foreign Key Mapping
-- Link the relevant columns in the orders_table to their corresponding entries in the dim_ tables using foreign keys.
+	- Link the relevant columns in the orders_table to their corresponding entries in the dim_ tables using foreign keys.
  
 
 The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dim tables:
@@ -92,8 +92,8 @@ Python code for the project, which is structured into files, classes, and method
 
 ### Milestone3
 
-SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
-ERD files.
+- SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
+- ERD files.
 
 ### Milestone4
 
