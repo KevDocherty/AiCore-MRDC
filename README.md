@@ -78,6 +78,42 @@ The database is now able to be queried to reveal business metrics.
 
 The project is comprised of 3 folders, as follows:
 
+<pre>
+<code>
+AiCore-MRDC/
+├── figures
+│   └── sales_data_erd.png
+├── LICENSE
+├── milestone2
+│   ├── __pycache__
+│   │   ├── data_cleaning.cpython-311.pyc
+│   │   ├── data_extraction.cpython-311.pyc
+│   │   └── database_utils.cpython-311.pyc
+│   ├── data_cleaning.py
+│   ├── data_extraction.py
+│   ├── database_utils.py
+│   ├── example_of_use.ipynb
+├── milestone3
+│   ├── dim_card_details.sql
+│   ├── dim_date_times.sql
+│   ├── dim_products.sql
+│   ├── dim_store_details.sql
+│   ├── dim_users.sql
+│   ├── orders_table.sql
+│   └── sales_data.pgerd
+├── milestone4
+│   ├── avg_interval_between_orders_by_year.sql
+│   ├── month_with_highest_sales_per_year.sql
+│   ├── sales_per_german_store_type.sql
+│   ├── sales_per_month.sql
+│   ├── sales_percentage_vs_store_type.sql
+│   ├── staff_per_country.sql
+│   ├── stores_per_country.sql
+│   ├── stores_per_locality.sql
+│   └── web_sales_vs_outlet_sales.sql
+</code>
+</pre>
+
 ### Milestone2
 
 Python code for the project, which is structured into files, classes, and methods, as follows:
