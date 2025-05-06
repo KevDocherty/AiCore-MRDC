@@ -77,7 +77,6 @@ The database is now able to be queried to reveal business metrics.
 ## File structure of the project
 
 The project is comprised of 3 folders, as follows:
-
 <pre>
 <code>
 AiCore-MRDC/
@@ -113,7 +112,6 @@ AiCore-MRDC/
 │   └── web_sales_vs_outlet_sales.sql
 </code>
 </pre>
-
 ### Milestone2
 
 Python code for the project, which is structured into files, classes, and methods, as follows:
