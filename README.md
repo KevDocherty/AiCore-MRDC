@@ -3,6 +3,24 @@ AiCore Multi-National Retail Data Centralisation Project
 
 ## Table of Contents
 
+- [AiCore-MRDC](#aicore-mrdc)
+  - [Table of Contents](#table-of-contents)
+  - [Project Description](#project-description)
+    - [Objective](#objective)
+      - [1. Database Setup](#1-database-setup)
+      - [2. Data Retrieval](#2-data-retrieval)
+      - [3. Data Cleaning](#3-data-cleaning)
+      - [4. Data Integration](#4-data-integration)
+    - [Database Structure](#database-structure)
+    - [Establishing Relationships](#establishing-relationships)
+  - [File structure of the project](#file-structure-of-the-project)
+    - [Milestone2](#milestone2)
+    - [Milestone3](#milestone3)
+    - [Milestone4](#milestone4)
+    - [Figures](#figures)
+  - [Usage instructions](#usage-instructions)
+  - [License information](#license-information)
+
 
 ## Project Description
 
