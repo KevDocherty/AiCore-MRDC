@@ -99,7 +99,7 @@ Python code for the project, which is structured into files, classes, and method
 
 Examples of SQL scripts to perform business analytics.
 
-### figures
+### Figures
 
 Contains an image showing the database structure in PNG format.
 
