@@ -93,11 +93,15 @@ Python code for the project, which is structured into files, classes, and method
 ### Milestone3
 
 - SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table. 
-- Entity Relationship DiagramERD files.
+- Entity Relationship Diagram in PGERD format.
 
 ### Milestone4
 
 Examples of SQL scripts to perform business analytics.
+
+### figures
+
+Contains an image showing the database structure in PNG format.
 
 ## Usage instructions
 
