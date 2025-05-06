@@ -47,7 +47,7 @@ To create a fully relational database structure, the following steps are carried
 	- Link the relevant columns in the orders_table to their corresponding entries in the dim_ tables using foreign keys.
  
 
-The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dim tables:
+The resulting relational sales_data database has a star structure, with the central orders_table connected radially to each of the dimension tables:
 
 <img src="figures/sales_data_erd.png" alt="ERD Diagram" width="600"/>
 
@@ -92,8 +92,8 @@ Python code for the project, which is structured into files, classes, and method
 
 ### Milestone3
 
-- SQL scripts to tidy up and connect the 5 dimension tables to the central orders_table. 
-- ERD files.
+- SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table. 
+- Entity Relationship DiagramERD files.
 
 ### Milestone4
 
