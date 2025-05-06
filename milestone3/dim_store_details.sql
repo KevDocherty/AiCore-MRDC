@@ -1,13 +1,15 @@
+-- perform data type harmonization of the 'dim_store_details' table columns...
+
 -- display the dim_store_details table...
 SELECT * FROM dim_store_details;
 
 -- show column datatypes of dim_users table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_store_details';
 
 -- show the max length of column values...
@@ -53,12 +55,12 @@ ALTER TABLE dim_store_details
 ALTER COLUMN continent TYPE VARCHAR(255) USING continent::VARCHAR(255);
 
 -- show updated column datatypes of dim_store_details table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_store_details';
 
 -- display the entire table...
@@ -74,7 +76,7 @@ WHERE "store_type" = 'Web Portal';
 
 -- in the circumstance where the '[null]' values are strings...
 UPDATE dim_store_details
-SET 
+SET
  	address = CASE WHEN address = '[null]' THEN NULL ELSE address END,
 	locality = CASE WHEN locality = '[null]' THEN NULL ELSE address END,
 	longitude = CASE WHEN longitude::TEXT = '[null]' THEN NULL ELSE longitude END,

@@ -1,13 +1,15 @@
+-- perform data type harmonization of the 'dim_date_times' table columns...
+
 -- display the 'dim_date_times' table...
 SELECT * FROM dim_date_times;
 
 -- display the current column datatypes...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_date_times';
 
 -- cast the columns to be of the desired data type
@@ -34,12 +36,12 @@ ALTER TABLE dim_date_times
 ALTER COLUMN date_uuid TYPE UUID USING date_uuid::UUID;
 
 -- show updated column datatypes of dim_date_times table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_date_times';
 
 -- display the entire table...

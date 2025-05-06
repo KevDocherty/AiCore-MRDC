@@ -1,13 +1,15 @@
+-- perform data type harmonization of the 'dim_users' table columns...
+
 -- display the dim_users table...
 SELECT * FROM orders_table;
 
 -- show column datatypes of dim_users table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_users';
 
 -- drop unwanted columns from dim_users...
@@ -47,10 +49,10 @@ ALTER TABLE dim_users
 ALTER COLUMN join_date TYPE DATE USING join_date::DATE;
 
 -- show column datatypes of dim_users table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_users';

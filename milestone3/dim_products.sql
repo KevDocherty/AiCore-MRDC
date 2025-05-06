@@ -1,3 +1,5 @@
+-- perform data type harmonization of the 'dim_products' table columns...
+
 -- display the 'dim_products' table...
 SELECT * FROM dim_products;
 
@@ -30,12 +32,12 @@ SELECT * FROM dim_products;
 
 -- cast the columns to be of the desired data type
 -- first, display the current column datatypes...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_products';
 
 -- show the max length of column values...
@@ -95,12 +97,12 @@ ALTER COLUMN still_available TYPE BOOL USING still_available::BOOL;
 
 
 -- show updated column datatypes of dim_products table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'dim_products';
 
 -- display the entire table...
