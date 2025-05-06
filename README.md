@@ -1,6 +1,9 @@
 # AiCore-MRDC
 AiCore Multi-National Retail Data Centralisation Project
 
+## Table of Contents
+
+
 ## Project Description
 
 A multinational company sells a diverse range of goods across the globe. However, its sales data are initially scattered across multiple sources, making them difficult to access and analyse effectively. To support a more data-driven approach, the organisation aims to consolidate this data into a single, centralised system.
