@@ -146,8 +146,21 @@ Python code for the project, which is structured into files, classes, and method
 
 ### Milestone3
 
-- SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table. 
-- Entity Relationship Diagram in PGERD format.
+SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table:
+- orders_table.sql
+  - ensures that the orders_table harmonises with the data types of the other tables in the database.
+- dim_users.sql
+  - performs data type harmonisation of the 'dim_users' table columns.
+- dim_store_details.sql
+  - performs data type harmonisation of the 'dim_store_details' table columns.
+- dim_products.sql
+  - performs data type harmonisation of the 'dim_products' table columns.
+- dim_date_times.sql
+  - performs data type harmonisation of the 'dim_date_times' table columns.
+- dim_card_details.sql
+  - performs data type harmonisation of the 'dim_card_details' table columns.
+
+Entity Relationship Diagram in PGERD format: sales_data.pgerd
 
 ### Milestone4
 
@@ -174,7 +187,7 @@ Examples of SQL scripts to perform business analytics:
 
 ### Figures
 
-Contains an image showing the database structure in PNG format.
+Contains an image showing the database structure in PNG format: sales_data_erd.png
 
 ## Usage instructions
 
