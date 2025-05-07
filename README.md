@@ -76,7 +76,7 @@ The database is now able to be queried to reveal business metrics.
 
 ## File structure of the project
 
-The project is comprised of 3 folders, as follows:
+The project is comprised of 4 folders, as follows:
 <pre>
 <code>
 AiCore-MRDC/
@@ -84,10 +84,6 @@ AiCore-MRDC/
 │   └── sales_data_erd.png
 ├── LICENSE
 ├── milestone2
-│   ├── __pycache__
-│   │   ├── data_cleaning.cpython-311.pyc
-│   │   ├── data_extraction.cpython-311.pyc
-│   │   └── database_utils.cpython-311.pyc
 │   ├── data_cleaning.py
 │   ├── data_extraction.py
 │   ├── database_utils.py
@@ -117,14 +113,16 @@ AiCore-MRDC/
 Python code for the project, which is structured into files, classes, and methods, as follows:
 
 - database_utils.py
-    - class DatabaseConnector(): methods to connect-to, read-from, and upload-to AWS RDS and PostgreSQL databases
+    - class DatabaseConnector():
+      - methods to connect-to, read-from, and upload-to AWS RDS and PostgreSQL databases, as follows:
         - read_db_creds(): reads a credentials yaml file and returns a dictionary of the credentials
         - init_db_engine(): uses the credentials from read_db_creds and initialises and returns an sqlalchemy database engine
         - list_db_tables(): using the database engine, returns a list of tables in the database
         - upload_to_db(): uploads a pandas dataframe to a SQL database table
         
 - data_extraction.py
-    - class DataExtractor(): methods to extract data from a variety of sources, and return as pandas dataframes
+    - class DataExtractor():
+      - methods to extract data from a variety of sources, and return as pandas dataframes, as follows:
         - read_rds_table(): reads a table from the database and returns it as a pandas dataframe
         - read_csv_table(): reads a csv file and returns it as a pandas dataframe
         - retrieve_pdf_data(): extracts all tables from all pages of a PDF and returns them as a pandas dataframe
@@ -134,7 +132,8 @@ Python code for the project, which is structured into files, classes, and method
         - extract_json_from_url(): extracts data from a JSON file and returns it as a pandas dataframe
 
 - data_cleaning.py
-    - class DataCleaning(): methods to clean pandas dataframes
+    - class DataCleaning():
+      - methods to clean pandas dataframes, as follows:
         - clean_user_data(): clean user data by removing null values, and converting date columns to datetime
         - clean_card_data(): clean card data by removing nulls and duplicates, filling missing values and converting date columns to datetime
         - called_clean_store_data(): clean store data by removing columns containing no useful information, 
@@ -152,7 +151,26 @@ Python code for the project, which is structured into files, classes, and method
 
 ### Milestone4
 
-Examples of SQL scripts to perform business analytics.
+Examples of SQL scripts to perform business analytics:
+
+- month_with_highest_sales_per_year.sql
+  - retrieves the month with the highest sales for each year from the orders table.
+- sales_per_german_store_type.sql
+  - calculates the total sales for each store type in Germany.
+- sales_per_month.sql
+  - calculates the total sales for each month by joining the orders_table with the dim_products and dim_date_times tables.
+- sales_percentage_vs_store_type.sql
+  - calculates the percentage of total sales made by each store type.
+- staff_per_country.sql
+  - query retrieves the total number of staff members for each country from the dim_store_details table.
+- stores_per_country.sql
+  - query retrieves the total number of stores in each country from the dim_store_details table.
+- stores_per_locality.sql
+  - query retrieves the number of stores in each locality from the dim_store_details table.
+- web_sales_vs_outlet_sales.sql
+  - query compares the number of sales and product quantities sold through the web portal and offline stores.
+- avg_interval_between_orders_by_year.sql
+  - calculates the average time difference between consecutive orders, grouped by year, and expresses the result in hours, minutes, seconds, and milliseconds.
 
 ### Figures
 
