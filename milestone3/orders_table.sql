@@ -1,13 +1,15 @@
+-- This script ensures that the orders_table harmonizes with the data types of the other tables in the database.
+
 -- display the orders_table...
 SELECT * FROM orders_table;
 
 -- show column datatypes of orders_table...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'orders_table';
 
 -- show the max length of column values...
@@ -43,11 +45,10 @@ ALTER TABLE orders_table
 ALTER COLUMN product_quantity TYPE SMALLINT USING product_quantity::SMALLINT;
 
 -- show column datatypes after above changes...
-SELECT 
-    column_name, 
+SELECT
+    column_name,
     data_type
-FROM 
+FROM
     information_schema.columns
-WHERE 
+WHERE
     table_name = 'orders_table';
-
