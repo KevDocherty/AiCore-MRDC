@@ -187,7 +187,7 @@ Examples of SQL scripts to perform business analytics:
 
 ### Figures
 
-Contains an image showing the database structure in PNG format.
+Contains an image showing the database structure in PNG format: sales_data_erd.png
 
 ## Usage instructions
 
