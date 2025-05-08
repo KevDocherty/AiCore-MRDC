@@ -80,6 +80,7 @@ The project is comprised of 4 folders, as follows:
 <pre>
 <code>
 AiCore-MRDC/
+├── requirements.txt
 ├── figures
 │   └── sales_data_erd.png
 ├── LICENSE
@@ -190,6 +191,12 @@ Examples of SQL scripts to perform business analytics:
 Contains an image showing the database structure in PNG format: sales_data_erd.png
 
 ## Usage instructions
+
+Clone the repository, then cd into the project root folder ("AiCore-MRDC").
+
+Create a virtual environment dedicated to the project.
+
+Load the required packages via: pip install -r requirements.txt
 
 Please refer to the Jupyter Notebook **example_of_use.ipynb**, in the **milestone2** folder, for examples of how to use the code.
 
