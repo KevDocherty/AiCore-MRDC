@@ -18,6 +18,7 @@ AiCore Multi-National Retail Data Centralisation Project
     - [Milestone3](#milestone3)
     - [Milestone4](#milestone4)
     - [Figures](#figures)
+  - [Installation](#installation)
   - [Usage instructions](#usage-instructions)
   - [License information](#license-information)
 
