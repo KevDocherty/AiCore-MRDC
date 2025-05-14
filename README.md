@@ -109,7 +109,7 @@ AiCore-MRDC/
 │   └── web_sales_vs_outlet_sales.sql
 </code>
 </pre>
-### Milestone2
+#### Milestone2
 
 Python code for the project, which is structured into files, classes, and methods, as follows:
 
@@ -145,7 +145,7 @@ Python code for the project, which is structured into files, classes, and method
         - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
         and converting date columns to numeric format
 
-### Milestone3
+#### Milestone3
 
 SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table:
 - orders_table.sql
@@ -163,7 +163,7 @@ SQL scripts to harmonise and connect the 5 dimension tables to the central order
 
 Entity Relationship Diagram in PGERD format: sales_data.pgerd
 
-### Milestone4
+#### Milestone4
 
 Examples of SQL scripts to perform business analytics:
 
@@ -190,18 +190,34 @@ Examples of SQL scripts to perform business analytics:
 
 Contains an image showing the database structure in PNG format: **sales_data_erd.png**
 
-## Installation
+### Installation
 
-1.
-	- Clone the repository: 
+1. Clone the repository:
+<pre>
+	git clone https://github.com/KevDocherty/AiCore-MRDC.git
+</pre>
 
-then cd into the project root folder ("AiCore-MRDC").
+2. cd into the new directory:
+<pre>
+	cd AiCore-MRDC
+</pre>
 
-Create a virtual environment dedicated to the project.
+3. setup a new virtual environment:
+<pre>
+	pyenv virtualenv myenv-name
+	pyenv activate myenv-name
+</pre>
 
-Load the required packages via: pip install -r requirements.txt
+4. install dependencies:
+<pre>
+	pip install -r requirements.txt
+</pre>
 
-Please refer to the Jupyter Notebook **example_of_use.ipynb**, in the **milestone2** folder, for examples of how to use the code.
+### Usage
+
+Please refer to the Jupyter Notebook **example_of_use.ipynb**, in the **milestone2** folder, for examples of how to use the Python code.
+
+The Python code and SQL scripts also contain docstrings providing further details of their functionality.
 
 ## License information
 
