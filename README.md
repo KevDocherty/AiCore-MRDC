@@ -203,16 +203,20 @@ Contains an image showing the database structure in PNG format: **sales_data_erd
 	cd AiCore-MRDC
 </pre>
 
-3. setup a new virtual environment:
+3. Setup a new virtual environment:
 <pre>
 	pyenv virtualenv myenv-name
 	pyenv activate myenv-name
 </pre>
 
-4. install dependencies:
+4. Install dependencies:
 <pre>
 	pip install -r requirements.txt
 </pre>
+
+5. Install a code editor such as VSCode or similar.
+
+6. Install PostgreSQL and a graphical management tool such as pgAdmin4.
 
 ### Usage Instructions
 
