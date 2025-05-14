@@ -214,7 +214,7 @@ Contains an image showing the database structure in PNG format: **sales_data_erd
 	pip install -r requirements.txt
 </pre>
 
-### Usage
+### Usage Instructions
 
 Please refer to the Jupyter Notebook **example_of_use.ipynb**, in the **milestone2** folder, for examples of how to use the Python code.
 
