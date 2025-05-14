@@ -109,7 +109,7 @@ AiCore-MRDC/
 │   └── web_sales_vs_outlet_sales.sql
 </code>
 </pre>
-#### Milestone2
+### Milestone2
 
 Python code for the project, which is structured into files, classes, and methods, as follows:
 
@@ -145,7 +145,7 @@ Python code for the project, which is structured into files, classes, and method
         - clean_date_events(): clean date events data by removing duplicates, converting time column to datetime,
         and converting date columns to numeric format
 
-#### Milestone3
+### Milestone3
 
 SQL scripts to harmonise and connect the 5 dimension tables to the central orders_table:
 - orders_table.sql
@@ -163,7 +163,7 @@ SQL scripts to harmonise and connect the 5 dimension tables to the central order
 
 Entity Relationship Diagram in PGERD format: sales_data.pgerd
 
-#### Milestone4
+### Milestone4
 
 Examples of SQL scripts to perform business analytics:
 
