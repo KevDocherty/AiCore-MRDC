@@ -30,18 +30,18 @@ A multinational company sells a diverse range of goods across the globe. However
 
 The first step is to retrieve and centralise the distributed sales data into a structured PostgreSQL database named sales_data. This process involves several key stages:
 #### 1.	Database Setup
-    •	Create a local PostgreSQL database called sales_data.
+- Create a local PostgreSQL database called sales_data.
 #### 2.	Data Retrieval
-	•	Extract source data from AWS RDS and AWS S3 buckets.
-	•	Load the data into Python using Pandas, resulting in several dataframes.
+- Extract source data from AWS RDS and AWS S3 buckets.
+- Load the data into Python using Pandas, resulting in several dataframes.
 #### 3.	Data Cleaning
-	•	Remove null values and duplicate records.
-	•	Eliminate columns containing no useful information.
-	•	Convert time-related fields to datetime format.
-	•	Filter out erroneous records.
-	•	Strip whitespace and remove non-numeric characters from numeric columns.
+- Remove null values and duplicate records.
+- Eliminate columns containing no useful information.
+- Convert time-related fields to datetime format.
+- Filter out erroneous records.
+- Strip whitespace and remove non-numeric characters from numeric columns.
 #### 4.	Data Integration
-	•	Insert the cleaned dataframes as tables into the sales_data database.
+- Insert the cleaned dataframes as tables into the sales_data database.
 
 ### Database Structure
 
@@ -188,11 +188,14 @@ Examples of SQL scripts to perform business analytics:
 
 ### Figures
 
-Contains an image showing the database structure in PNG format: sales_data_erd.png
+Contains an image showing the database structure in PNG format: **sales_data_erd.png**
 
-## Usage instructions
+## Installation
 
-Clone the repository, then cd into the project root folder ("AiCore-MRDC").
+1.
+	- Clone the repository: 
+
+then cd into the project root folder ("AiCore-MRDC").
 
 Create a virtual environment dedicated to the project.
 
